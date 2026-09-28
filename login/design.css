@@ -1,0 +1,243 @@
+/* --- Variables --- */
+:root {
+    --primary-blue: #001f5c;
+    --font-poppins: 'Poppins', sans-serif;
+    --font-source-serif: 'Source Serif 4', serif;
+}
+
+body {
+    font-family: var(--font-poppins);
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+/* --- Left Side Styling --- */
+.login-left-pane {
+    background-color: #001848; /* Exact deep navy blue from reference */
+    color: #FFFFFF;
+    padding-left: 80px !important;
+    padding-right: 50px !important;
+}
+
+.login-brand-title {
+    font-family: var(--font-source-serif);
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.brand-logo-inline {
+    vertical-align: middle;
+    margin: 0 -4px;
+}
+
+.login-brand-desc {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: 16px;
+    color: #b0bac5;
+    line-height: 1.6;
+    max-width: 480px;
+}
+
+/* --- Right Side Styling --- */
+.login-right-pane {
+    background-color: #FFFFFF;
+}
+
+.login-form-wrapper {
+    width: 100%;
+    max-width: 420px;
+}
+
+.form-main-title {
+    font-family: var(--font-source-serif);
+    font-weight: 700;
+    font-size: 36px;
+    color: #001848;
+    margin-bottom: 8px;
+}
+
+.form-sub-title {
+    font-family: var(--font-poppins);
+    font-weight: 400;
+    font-size: 14px;
+    color: #7E8897;
+    margin-bottom: 30px;
+}
+
+/* Google Button Style */
+.btn-google {
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-google:hover {
+    background-color: #f1f3f5;
+    color: #111;
+}
+
+/* Form Inputs */
+.form-label-custom {
+    font-family: var(--font-poppins);
+    font-weight: 500;
+    font-size: 14px;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.form-control-custom {
+    border: 1px solid #e1e4e8;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-family: var(--font-poppins);
+    font-size: 14px;
+    background-color: #fcfcfc;
+}
+
+.form-control-custom:focus {
+    border-color: #001848;
+    box-shadow: 0 0 0 3px rgba(0, 24, 72, 0.1);
+    background-color: #FFFFFF;
+}
+
+/* Checkbox */
+.checkbox-custom {
+    border-color: #b0bac5;
+    border-radius: 4px;
+}
+
+.checkbox-custom:checked {
+    background-color: #001848;
+    border-color: #001848;
+}
+
+.remember-text {
+    font-family: var(--font-poppins);
+    font-size: 14px;
+    color: #495057;
+}
+
+/* Submit Button */
+.btn-login {
+    background-color: #001848;
+    color: #FFFFFF;
+    border-radius: 10px;
+    padding: 13px;
+    font-family: var(--font-poppins);
+    font-weight: 600;
+    font-size: 15px;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #001030;
+    color: #FFFFFF;
+}
+
+/* Footer prompt link */
+.signup-prompt {
+    font-family: var(--font-poppins);
+    font-size: 14px;
+    color: #7E8897;
+}
+
+.sign-in-link {
+    color: #001848;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.sign-in-link:hover {
+    text-decoration: underline;
+}
+
+/* Responsive view para sa mobile */
+@media (max-width: 991.98px) {
+    .login-left-pane {
+        padding: 40px 20px !important;
+        text-align: center;
+    }
+    .login-brand-title {
+        font-size: 36px;
+    }
+}
+
+/* --- UX Enhancements & Animations --- */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to the main containers */
+.login-left-content {
+    animation: fadeInLeft 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.login-form-wrapper {
+    animation: fadeInUp 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+/* Enhanced Hover states for buttons */
+.btn-google {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-google:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+}
+
+.btn-login {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 24, 72, 0.25);
+}
+
+.btn-login:active {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(0, 24, 72, 0.15);
+}
+
+/* Enhanced Input Focus */
+.form-control-custom {
+    transition: all 0.3s ease;
+}
+
+.form-control-custom:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 24, 72, 0.08), 0 0 0 3px rgba(0, 24, 72, 0.1);
+}
