@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Cora Academic Workspace</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+
+    <div class="login-container-fluid">
+        <div class="row g-0 min-vh-100">
+            
+            <!-- Left Side: Dark Blue Background with Brand Text -->
+            <div class="col-lg-6 login-left-pane d-flex flex-column justify-content-center px-5">
+                <div class="login-left-content">
+                    <h1 class="login-brand-title">
+                        Your <img src="../images/logo.png" alt="Cora Logo" width="69" height="70" class="brand-logo-inline">entralized <br>
+                        academic <br>
+                        intelligence.
+                    </h1>
+                    <p class="login-brand-desc">
+                        Consolidate your courses, dynamic deadline alerts, research notes, and timetables into one distraction-free operating system.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Side: Sign Up Form -->
+            <div class="col-lg-6 login-right-pane d-flex align-items-center justify-content-center px-4 py-5">
+                <div class="login-form-wrapper">
+                    
+                    <h2 class="form-main-title">Sign Up</h2>
+                    <p class="form-sub-title">Create your account to start organizing your academic workflow.</p>
+
+                    <!-- Continue with Google Button -->
+                    <a href="#" class="btn-google d-flex align-items-center justify-content-center mb-4">
+                        <svg width="18" height="18" viewBox="0 0 18 18" class="me-2">
+                            <path fill="#4285F4" d="M17.64 9.2c0-.63-.06-1.25-.19-1.84H9v3.49h4.84c-.21 1.12-.85 2.08-1.81 2.72v2.26h2.92c1.71-1.57 2.69-3.88 2.69-6.63z"/>
+                            <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.81.54-1.84.86-3.04.86-2.34 0-4.33-1.58-5.04-3.71H.95v2.33C2.44 15.98 5.48 18 9 18z"/>
+                            <path fill="#FBBC05" d="M3.96 10.71c-.18-.54-.28-1.12-.28-1.71s.1-1.17.28-1.71V4.96H.95C.35 6.15 0 7.52 0 9s.35 2.85.95 4.04l3.01-2.33z"/>
+                            <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58C13.47.89 11.43 0 9 0 5.48 0 2.44 2.02.95 4.96l3.01 2.33c.71-2.13 2.7-3.71 5.04-3.71z"/>
+                        </svg>
+                        Sign up with Google
+                    </a>
+
+                    <form>
+                        <!-- Full Name Field -->
+                        <div class="mb-3">
+                            <label for="fullname" class="form-label-custom">Full Name</label>
+                            <input type="text" class="form-control form-control-custom" id="fullname" placeholder="Juan Dela Cruz" required>
+                        </div>
+
+                        <!-- Email Field -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label-custom">Email</label>
+                            <input type="email" class="form-control form-control-custom" id="email" placeholder="@student.university.edu.ph" required>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-3">
+                            <label for="password" class="form-label-custom">Password</label>
+                            <div class="position-relative">
+                                <input type="password" class="form-control form-control-custom pe-5" id="password" placeholder="••••••••" required>
+                                <span class="position-absolute top-50 end-0 translate-middle-y pe-3 toggle-password" data-target="password" style="cursor: pointer; color: #7E8897; display: flex; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Confirm Password Field -->
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label-custom">Confirm Password</label>
+                            <div class="position-relative">
+                                <input type="password" class="form-control form-control-custom pe-5" id="confirmPassword" placeholder="••••••••" required>
+                                <span class="position-absolute top-50 end-0 translate-middle-y pe-3 toggle-password" data-target="confirmPassword" style="cursor: pointer; color: #7E8897; display: flex; align-items: center;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Conditions Checkbox -->
+                        <div class="mb-4 form-check">
+                            <input type="checkbox" class="form-check-input checkbox-custom" id="termsAgree" required>
+                            <label class="form-check-label remember-text" for="termsAgree">
+                                I agree to the <a href="#" class="sign-in-link">Terms of Service</a> and <a href="#" class="sign-in-link">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <!-- Sign Up Submit Button -->
+                        <button type="submit" class="btn btn-login w-100 mb-4">Create Account</button>
+                    </form>
+
+                    <!-- Footer Login link (Connect sa Log In if naa nay account) -->
+                    <div class="text-center signup-prompt">
+                        Already have an academic account? <a href="login.html" class="sign-in-link">Log In</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Password visibility toggles
+        document.querySelectorAll('.toggle-password').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const passwordInput = document.getElementById(targetId);
+                const isPassword = passwordInput.getAttribute('type') === 'password';
+                
+                passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+                
+                // Toggle eye icon
+                this.innerHTML = isPassword ? 
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-eye-slash" viewBox="0 0 16 16">
+                        <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7.028 7.028 0 0 0-2.79.588l.77.771A5.944 5.944 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.134 13.134 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755-.165.165-.337.328-.517.486l.708.709z"/>
+                        <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829l.822.822zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829z"/>
+                        <path d="M3.35 5.47c-.18.16-.353.322-.518.487A13.134 13.134 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7.029 7.029 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12-.708.708z"/>
+                    </svg>` : 
+                    `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                    </svg>`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -21,7 +21,7 @@ body {
 }
 
 .login-brand-title {
-    font-family: var(--font-source-serif);
+    font-family: var(--font-poppins);
     font-weight: 700;
     font-size: 52px;
     line-height: 1.2;
@@ -54,7 +54,7 @@ body {
 }
 
 .form-main-title {
-    font-family: var(--font-source-serif);
+    font-family: var(--font-poppins);
     font-weight: 700;
     font-size: 36px;
     color: #001848;
