@@ -137,7 +137,7 @@
                     <span class="nav-text">Study</span>
                 </a>
 
-                <!-- Settings (Search removed as requested) -->
+                <!-- Settings -->
                 <a href="#" class="nav-item" data-title="Settings">
                     <span class="nav-icon">
                         <!-- Settings Gear Icon -->
@@ -342,15 +342,34 @@
             </div>
             <div class="modal-body">
                 <button class="quick-action-btn" data-action="subject">
-                    <span class="action-icon badge-subjects">📚</span>
+                    <span class="action-icon badge-subjects">
+                        <!-- Layers Icon for New Subject -->
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                        </svg>
+                    </span>
                     <span>New Subject</span>
                 </button>
                 <button class="quick-action-btn" data-action="note">
-                    <span class="action-icon badge-notes">📝</span>
+                    <span class="action-icon badge-notes">
+                        <!-- Edit/Pen Icon for New Note -->
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                            <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                        </svg>
+                    </span>
                     <span>New Note</span>
                 </button>
                 <button class="quick-action-btn" data-action="task">
-                    <span class="action-icon badge-tasks">✅</span>
+                    <span class="action-icon badge-tasks">
+                        <!-- Check Square Icon for New Task -->
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 11 12 14 22 4"></polyline>
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                        </svg>
+                    </span>
                     <span>New Task</span>
                 </button>
             </div>

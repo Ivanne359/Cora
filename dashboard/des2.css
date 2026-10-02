@@ -13,7 +13,7 @@
     --text-dark: #1E293B;
     
     --navy-brand: #001848;
-    --sidebar-width: 175px;
+    --sidebar-width: 240px; /* Gi-padak-an gikan sa 175px para mas lapad ang menu */
     --header-height: 64px;
     
     --active-item-bg: #E6E8EA;
@@ -72,14 +72,14 @@ a {
     border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    padding: 22px 14px;
+    padding: 22px 20px; /* Gi-adjust ang padding kay gipadak-an ang width */
     user-select: none;
     z-index: 100;
 }
 
 /* Cora Brand Header */
 .sidebar-header {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     text-align: center;
 }
 
@@ -126,17 +126,17 @@ a {
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 9px 14px;
+    gap: 14px;
+    padding: 10px 16px;
     border-radius: 8px;
     color: #4B5563;
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 500;
     transition: all 0.15s ease-in-out;
     cursor: pointer;
@@ -147,15 +147,15 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
     color: inherit;
 }
 
 .nav-icon img {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     object-fit: contain;
 }
 
@@ -202,7 +202,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 36px 0 28px;
+    padding: 0 40px 0 32px;
     position: sticky;
     top: 0;
     z-index: 90;
@@ -211,7 +211,7 @@ a {
 /* Header Search Bar */
 .header-search-container {
     flex: 1;
-    max-width: 320px;
+    max-width: 360px; /* Gi-stretch sad gamay ang search bar */
 }
 
 .search-input-box {
@@ -220,7 +220,7 @@ a {
     background-color: #F7F9FB;
     border: 1px solid #D5D9E0;
     border-radius: 20px;
-    padding: 6px 14px;
+    padding: 8px 16px;
     transition: all 0.2s ease;
 }
 
@@ -232,7 +232,7 @@ a {
 
 .search-icon {
     color: #9CA3AF;
-    margin-right: 8px;
+    margin-right: 10px;
     flex-shrink: 0;
 }
 
@@ -241,7 +241,7 @@ a {
     background: transparent;
     outline: none;
     font-family: var(--font-poppins);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-primary);
     width: 100%;
 }
@@ -254,7 +254,7 @@ a {
 .header-actions {
     display: flex;
     align-items: center;
-    gap: 22px;
+    gap: 24px;
     position: relative;
 }
 
@@ -280,8 +280,8 @@ a {
     position: absolute;
     top: 2px;
     right: 4px;
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     background-color: var(--danger-color);
     border-radius: 50%;
     border: 1.5px solid var(--bg-page);
@@ -293,12 +293,12 @@ a {
     position: absolute;
     top: 48px;
     right: 50px;
-    width: 280px;
+    width: 300px;
     background-color: #FFFFFF;
     border: 1px solid var(--border-color);
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    padding: 12px;
+    padding: 14px;
     z-index: 200;
 }
 
@@ -311,39 +311,39 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
     border-bottom: 1px solid var(--border-light);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .dropdown-title {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
 }
 
 .dropdown-badge {
-    font-size: 10px;
+    font-size: 11px;
     background-color: var(--badge-tasks-bg);
     color: var(--badge-tasks-color);
-    padding: 2px 6px;
-    border-radius: 10px;
+    padding: 2px 8px;
+    border-radius: 12px;
     font-weight: 600;
 }
 
 .notification-item {
-    padding: 8px 6px;
+    padding: 10px 8px;
     border-radius: 6px;
 }
 
 .notification-text {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-primary);
     margin-bottom: 4px;
 }
 
 .notification-time {
-    font-size: 10px;
+    font-size: 11px;
     color: var(--text-secondary);
 }
 
@@ -354,8 +354,8 @@ a {
 }
 
 .profile-avatar-img {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     object-fit: cover;
     display: block;
@@ -373,12 +373,12 @@ a {
     position: absolute;
     top: 48px;
     right: 0;
-    width: 170px;
+    width: 180px;
     background-color: #FFFFFF;
     border: 1px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    padding: 10px;
+    padding: 12px;
     z-index: 200;
 }
 
@@ -388,30 +388,30 @@ a {
 }
 
 .profile-info {
-    padding: 4px 6px 6px;
+    padding: 4px 8px 8px;
 }
 
 .user-name {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
 }
 
 .user-role {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-secondary);
 }
 
 .profile-divider {
     border: 0;
     border-top: 1px solid var(--border-light);
-    margin: 6px 0;
+    margin: 8px 0;
 }
 
 .profile-menu-item {
     display: block;
-    padding: 6px 8px;
-    font-size: 12px;
+    padding: 8px 10px;
+    font-size: 13px;
     color: var(--danger-color);
     font-weight: 500;
     border-radius: 6px;
@@ -426,8 +426,10 @@ a {
    DASHBOARD BODY
    ========================================================================== */
 .dashboard-body {
-    padding: 28px 36px 40px;
-    max-width: 1100px;
+    padding: 32px 48px 48px;
+    /* Gi-usab ang max-width aron mo-expand ang cards unya dili magbilin og dako nga whitespace sa tuo */
+    max-width: 1500px;
+    width: 100%;
 }
 
 /* Welcome Greeting */
@@ -435,20 +437,20 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .welcome-title {
     font-family: var(--font-poppins);
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1.2;
-    margin-bottom: 4px;
+    margin-bottom: 6px;
 }
 
 .welcome-subtitle {
-    font-size: 13.5px;
+    font-size: 14px;
     color: var(--text-secondary);
     font-weight: 400;
 }
@@ -462,8 +464,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 4px;
-    border-radius: 6px;
+    padding: 6px;
+    border-radius: 8px;
     transition: all 0.2s ease;
 }
 
@@ -478,15 +480,15 @@ a {
 .stats-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    margin-bottom: 22px;
+    gap: 24px; /* Gipadak-an ang gap aron mutakdo sa gidak-on sa space */
+    margin-bottom: 28px;
 }
 
 .stat-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 18px 20px;
+    padding: 22px 24px;
     display: flex;
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -499,13 +501,13 @@ a {
 
 /* Icon Badges */
 .stat-icon-badge {
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .badge-subjects {
@@ -526,17 +528,17 @@ a {
 /* Stat Number */
 .stat-number {
     font-family: var(--font-poppins);
-    font-size: 34px;
+    font-size: 38px;
     font-weight: 700;
     color: var(--text-primary);
     line-height: 1;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
 }
 
 /* Stat Label */
 .stat-label {
     font-family: var(--font-serif);
-    font-size: 10.5px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
@@ -549,7 +551,7 @@ a {
 .content-grid-row {
     display: grid;
     grid-template-columns: 1.5fr 1fr;
-    gap: 18px;
+    gap: 24px;
     align-items: start;
 }
 
@@ -566,13 +568,13 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 20px;
+    padding: 16px 24px;
     border-bottom: 1px solid var(--border-light);
 }
 
 .card-header-title {
     font-family: var(--font-poppins);
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
@@ -581,7 +583,7 @@ a {
 .header-with-icon {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
 .warning-icon {
@@ -595,7 +597,7 @@ a {
 }
 
 .view-all-link {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     color: var(--link-color);
     text-decoration: none;
@@ -608,12 +610,12 @@ a {
 
 /* Card Content Body */
 .card-content-body {
-    padding: 22px 20px;
+    padding: 24px 24px;
 }
 
 /* Specific Card Layouts */
 .recent-notes-card {
-    min-height: 360px;
+    min-height: 380px;
     display: flex;
     flex-direction: column;
 }
@@ -624,7 +626,7 @@ a {
 
 .empty-state-text {
     font-family: var(--font-poppins);
-    font-size: 14px;
+    font-size: 15px;
     color: #4B5563;
 }
 
@@ -638,19 +640,19 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 90px;
+    min-height: 100px;
 }
 
 /* Right Column Stack */
 .grid-right-col {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 24px;
 }
 
 .deadline-card,
 .schedule-card {
-    min-height: 130px;
+    min-height: 140px;
 }
 
 /* ==========================================================================
@@ -678,8 +680,8 @@ a {
     background-color: #FFFFFF;
     border-radius: 14px;
     width: 90%;
-    max-width: 360px;
-    padding: 20px;
+    max-width: 380px;
+    padding: 24px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
@@ -687,11 +689,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .modal-header h3 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -699,7 +701,7 @@ a {
 .modal-close-btn {
     background: transparent;
     border: none;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
     color: var(--text-secondary);
 }
@@ -707,19 +709,19 @@ a {
 .modal-body {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .quick-action-btn {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 14px;
+    gap: 14px;
+    padding: 14px 16px;
     background-color: var(--bg-page);
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-family: var(--font-poppins);
-    font-size: 13.5px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text-primary);
     cursor: pointer;
@@ -732,13 +734,13 @@ a {
 }
 
 .action-icon {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* ==========================================================================
@@ -760,7 +762,7 @@ a {
     }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 992px) {
     .content-grid-row {
         grid-template-columns: 1fr;
     }
@@ -768,21 +770,21 @@ a {
         grid-template-columns: 1fr;
     }
     .sidebar {
-        width: 60px;
-        min-width: 60px;
-        padding: 16px 8px;
+        width: 70px;
+        min-width: 70px;
+        padding: 20px 10px;
     }
     .brand-name, .brand-tagline, .nav-text {
         display: none;
     }
     .nav-item {
         justify-content: center;
-        padding: 10px 0;
+        padding: 12px 0;
     }
     .top-header {
-        padding: 0 16px;
+        padding: 0 20px;
     }
     .dashboard-body {
-        padding: 20px 16px;
+        padding: 24px 20px;
     }
 }

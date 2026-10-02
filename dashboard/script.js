@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. Sidebar Navigation Active State Toggle ---

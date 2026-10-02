@@ -14,7 +14,7 @@ body {
 
 /* --- Left Side Styling --- */
 .login-left-pane {
-    background-color: #001848; /* Exact deep navy blue from reference */
+    background-color: #001848;
     color: #FFFFFF;
     padding-left: 80px !important;
     padding-right: 50px !important;
@@ -199,7 +199,6 @@ body {
     }
 }
 
-/* Apply animations to the main containers */
 .login-left-content {
     animation: fadeInLeft 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
@@ -208,7 +207,6 @@ body {
     animation: fadeInUp 0.9s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
 }
 
-/* Enhanced Hover states for buttons */
 .btn-google {
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
@@ -232,7 +230,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 24, 72, 0.15);
 }
 
-/* Enhanced Input Focus */
 .form-control-custom {
     transition: all 0.3s ease;
 }
