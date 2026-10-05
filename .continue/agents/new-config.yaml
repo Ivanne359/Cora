@@ -1,0 +1,16 @@
+
+name: Qwen Local Coding Agent
+version: 1.0.0
+schema: v1
+
+models:
+  - name: Qwen3.5 9B Local
+    provider: ollama
+    model: qwen3.5:9b
+    apiBase: http://localhost:11434
+    roles:
+      - chat
+      - edit
+      - apply
+    capabilities:
+      - tool_use
