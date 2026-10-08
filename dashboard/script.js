@@ -1,12 +1,80 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. Sidebar Navigation Active State Toggle ---
+    // --- 1. Seamless Section Switching & Navigation (Dashboard <-> Subjects) ---
     const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
+    const dashboardSection = document.getElementById('dashboardSection');
+    const subjectsSection = document.getElementById('subjectsSection');
+
+    function switchView(viewName) {
+        if (viewName === 'subjects') {
+            if (dashboardSection && subjectsSection) {
+                dashboardSection.style.display = 'none';
+                subjectsSection.style.display = 'block';
+                navItems.forEach(el => el.classList.remove('active'));
+                const subjNav = document.querySelector('.sidebar-nav .nav-item[data-title="Subjects"]');
+                if (subjNav) subjNav.classList.add('active');
+                window.location.hash = 'subjects';
+                return true;
+            } else {
+                window.location.href = 'subjects.html';
+                return true;
+            }
+        } else if (viewName === 'dashboard') {
+            if (dashboardSection && subjectsSection) {
+                subjectsSection.style.display = 'none';
+                dashboardSection.style.display = 'block';
+                navItems.forEach(el => el.classList.remove('active'));
+                const dashNav = document.querySelector('.sidebar-nav .nav-item[data-title="Dashboard"]');
+                if (dashNav) dashNav.classList.add('active');
+                window.location.hash = 'dashboard';
+                return true;
+            } else {
+                window.location.href = 'dashboard.html';
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Attach click listeners to sidebar navigation items
     navItems.forEach(item => {
         item.addEventListener('click', (e) => {
-            e.preventDefault();
-            navItems.forEach(el => el.classList.remove('active'));
-            item.classList.add('active');
+            const title = item.getAttribute('data-title');
+            if (title === 'Subjects') {
+                e.preventDefault();
+                switchView('subjects');
+            } else if (title === 'Dashboard') {
+                e.preventDefault();
+                switchView('dashboard');
+            } else {
+                const href = item.getAttribute('href');
+                if (href && href !== '#' && !href.startsWith('javascript:')) {
+                    return; // Normal link navigation
+                }
+                e.preventDefault();
+                navItems.forEach(el => el.classList.remove('active'));
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // Check URL hash on page load (e.g. dashboard.html#subjects)
+    if (window.location.hash === '#subjects') {
+        switchView('subjects');
+    }
+
+    // Dynamic real-time year
+    const yearEl = document.getElementById('academicYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Filter tab toggle for subjects
+    const filterTabs = document.querySelectorAll('.filter-tab-btn');
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
         });
     });
 
@@ -44,55 +112,73 @@ document.addEventListener('DOMContentLoaded', () => {
         if (profileDropdown) profileDropdown.classList.remove('show');
     });
 
-    // --- 4. Quick Add (+) Modal Functionality ---
+    // --- 4. Add New Subject Modal Functionality ---
     const quickAddBtn = document.getElementById('quickAddBtn');
     const quickAddModal = document.getElementById('quickAddModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
+    const cancelModalBtn = document.getElementById('cancelModalBtn');
+    const addSubjectForm = document.getElementById('addSubjectForm');
 
-    if (quickAddBtn && quickAddModal) {
-        quickAddBtn.addEventListener('click', () => {
+    function openSubjectModal() {
+        if (quickAddModal) {
             quickAddModal.classList.add('show');
-        });
-
-        if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', () => {
-                quickAddModal.classList.remove('show');
-            });
+            const firstInput = document.getElementById('subjectName');
+            if (firstInput) setTimeout(() => firstInput.focus(), 100);
         }
+    }
 
-        // Close on background click
+    function closeSubjectModal() {
+        if (quickAddModal) {
+            quickAddModal.classList.remove('show');
+            if (addSubjectForm) addSubjectForm.reset();
+        }
+    }
+
+    window.openSubjectModal = openSubjectModal;
+    window.closeSubjectModal = closeSubjectModal;
+
+    if (quickAddBtn) {
+        quickAddBtn.addEventListener('click', openSubjectModal);
+    }
+
+    const openAddSubjectBtn = document.getElementById('openAddSubjectBtn');
+    if (openAddSubjectBtn) {
+        openAddSubjectBtn.addEventListener('click', openSubjectModal);
+    }
+
+    if (closeModalBtn) {
+        closeModalBtn.addEventListener('click', closeSubjectModal);
+    }
+
+    if (cancelModalBtn) {
+        cancelModalBtn.addEventListener('click', closeSubjectModal);
+    }
+
+    // Close on backdrop click
+    if (quickAddModal) {
         quickAddModal.addEventListener('click', (e) => {
             if (e.target === quickAddModal) {
-                quickAddModal.classList.remove('show');
+                closeSubjectModal();
             }
         });
+    }
 
-        // Quick Action Buttons click handler
-        const actionButtons = quickAddModal.querySelectorAll('.quick-action-btn');
-        actionButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const action = btn.getAttribute('data-action');
-                if (action === 'subject') {
-                    const countEl = document.getElementById('countSubjects');
-                    if (countEl) countEl.textContent = parseInt(countEl.textContent || '0', 10) + 1;
-                } else if (action === 'note') {
-                    const countEl = document.getElementById('countNotes');
-                    if (countEl) countEl.textContent = parseInt(countEl.textContent || '0', 10) + 1;
-                    const notesBody = document.querySelector('.notes-body');
-                    if (notesBody) {
-                        notesBody.innerHTML = `
-                            <div style="padding: 10px 0; border-bottom: 1px solid #ECEFF3;">
-                                <h4 style="font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 4px;">Sample Research Note</h4>
-                                <p style="font-size: 12px; color: #6B7280;">Centralized academic notes and lesson summary.</p>
-                            </div>
-                        `;
-                    }
-                } else if (action === 'task') {
-                    const countEl = document.getElementById('countTasks');
-                    if (countEl) countEl.textContent = parseInt(countEl.textContent || '0', 10) + 1;
-                }
-                quickAddModal.classList.remove('show');
-            });
+    // Escape key to close modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && quickAddModal && quickAddModal.classList.contains('show')) {
+            closeSubjectModal();
+        }
+    });
+
+    // Handle Add Subject Form Submit
+    if (addSubjectForm) {
+        addSubjectForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const countEl = document.getElementById('countSubjects');
+            if (countEl) {
+                countEl.textContent = parseInt(countEl.textContent || '0', 10) + 1;
+            }
+            closeSubjectModal();
         });
     }
 

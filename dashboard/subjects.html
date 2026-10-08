@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Cora Academic Workspace</title>
+    <title>Subjects - Cora Academic Workspace</title>
 
     <!-- Google Fonts: Poppins & Source Serif 4 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,19 +21,19 @@
         <aside class="sidebar">
             <!-- Brand Logo -->
             <div class="sidebar-header">
-                <a href="#" class="brand-link">
+                <a href="dashboard.html" class="brand-link">
                     <div class="brand-logo-row">
                         <img src="../images/logo.png" alt="C" class="brand-c-logo">
                         <span class="brand-name">ora</span>
                     </div>
-                    <span class="brand-tagline">Academics<br>Workspace</span>
+                    <span class="brand-tagline">Academic<br>Workspace</span>
                 </a>
             </div>
 
             <!-- Navigation Links -->
             <nav class="sidebar-nav">
-                <!-- Dashboard (Active) -->
-                <a href="dashboard.html" class="nav-item active" data-title="Dashboard">
+                <!-- Dashboard -->
+                <a href="dashboard.html" class="nav-item" data-title="Dashboard">
                     <span class="nav-icon">
                         <!-- Dashboard 4 squares grid icon -->
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -46,8 +46,8 @@
                     <span class="nav-text">Dashboard</span>
                 </a>
 
-                <!-- Subjects -->
-                <a href="subjects.html" class="nav-item" data-title="Subjects">
+                <!-- Subjects (Active in this view) -->
+                <a href="subjects.html" class="nav-item active" data-title="Subjects">
                     <span class="nav-icon">
                         <!-- Open Book Icon -->
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -137,6 +137,17 @@
                     <span class="nav-text">Study</span>
                 </a>
 
+                <!-- Search -->
+                <a href="#" class="nav-item" data-title="Search">
+                    <span class="nav-icon">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <span class="nav-text">Search</span>
+                </a>
+
                 <!-- Settings -->
                 <a href="#" class="nav-item" data-title="Settings">
                     <span class="nav-icon">
@@ -207,130 +218,9 @@
                 </div>
             </header>
 
-            <!-- DASHBOARD MAIN BODY -->
-            <main class="dashboard-body" id="dashboardSection">
+            <!-- SUBJECTS MAIN BODY -->
+            <main class="subjects-page-body">
                 
-                <!-- Welcome Greeting Banner -->
-                <div class="welcome-header">
-                    <div class="welcome-text-group">
-                        <h1 class="welcome-title" id="greetingTitle">Good evening, Bai</h1>
-                        <p class="welcome-subtitle">Here is an overview of your academic workspace today.</p>
-                    </div>
-                    
-                    <!-- Quick Add Button (+) -->
-                    <button class="btn-quick-add" id="quickAddBtn" title="Create New" aria-label="Create New">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- 3 SUMMARY STAT CARDS -->
-                <div class="stats-row">
-                    
-                    <!-- Card 1: Total Subjects -->
-                    <div class="stat-card">
-                        <div class="stat-icon-badge badge-subjects">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                            </svg>
-                        </div>
-                        <div class="stat-number" id="countSubjects">0</div>
-                        <div class="stat-label">TOTAL SUBJECTS</div>
-                    </div>
-
-                    <!-- Card 2: Notes -->
-                    <div class="stat-card">
-                        <div class="stat-icon-badge badge-notes">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                <polyline points="14 2 14 8 20 8"></polyline>
-                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                            </svg>
-                        </div>
-                        <div class="stat-number" id="countNotes">0</div>
-                        <div class="stat-label">NOTES</div>
-                    </div>
-
-                    <!-- Card 3: Pending Tasks -->
-                    <div class="stat-card">
-                        <div class="stat-icon-badge badge-tasks">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                            </svg>
-                        </div>
-                        <div class="stat-number" id="countTasks">0</div>
-                        <div class="stat-label">PENDING TASKS</div>
-                    </div>
-
-                </div>
-
-                <!-- MAIN WORKSPACE 2-COLUMN SECTION -->
-                <div class="content-grid-row">
-                    
-                    <!-- Left Column: Recent Notes -->
-                    <div class="grid-left-col">
-                        <div class="dashboard-card recent-notes-card">
-                            <div class="card-header-bar">
-                                <h2 class="card-header-title">Recent Notes</h2>
-                                <a href="#" class="view-all-link">View All</a>
-                            </div>
-                            <div class="card-content-body notes-body">
-                                <p class="empty-state-text left-aligned">No recent notes</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Deadlines & Schedule -->
-                    <div class="grid-right-col">
-                        
-                        <!-- Card: Upcoming Deadlines -->
-                        <div class="dashboard-card deadline-card">
-                            <div class="card-header-bar">
-                                <div class="header-with-icon">
-                                    <svg class="warning-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
-                                        <line x1="12" y1="9" x2="12" y2="13"></line>
-                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
-                                    </svg>
-                                    <h2 class="card-header-title">Upcoming Deadlines</h2>
-                                </div>
-                            </div>
-                            <div class="card-content-body center-aligned">
-                                <p class="empty-state-text">No upcoming deadline</p>
-                            </div>
-                        </div>
-
-                        <!-- Card: Today's Schedule -->
-                        <div class="dashboard-card schedule-card">
-                            <div class="card-header-bar">
-                                <div class="header-with-icon">
-                                    <svg class="calendar-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                                    </svg>
-                                    <h2 class="card-header-title">Today's Schedule</h2>
-                                </div>
-                            </div>
-                            <div class="card-content-body center-aligned">
-                                <p class="empty-state-text">No schedule today</p>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </main>
-
-            <!-- SUBJECTS MAIN BODY SECTION -->
-            <main class="subjects-page-body" id="subjectsSection" style="display: none;">
                 <!-- Page Title & Subtitle -->
                 <div class="subjects-header-group">
                     <h1 class="subjects-main-title">Subjects</h1>
@@ -438,7 +328,7 @@
 
     </div>
 
-    <!-- Add New Subject Modal -->
+    <!-- Add New Subject Modal (Exact Design with x-circle.svg) -->
     <div class="modal-backdrop" id="quickAddModal">
         <div class="modal-card add-subject-modal">
             <!-- Modal Header -->
@@ -480,5 +370,28 @@
 
     <!-- Dashboard JavaScript -->
     <script src="script.js"></script>
+    <script>
+        // Set dynamic academic real-time year
+        const yearEl = document.getElementById('academicYear');
+        if (yearEl) {
+            yearEl.textContent = new Date().getFullYear();
+        }
+
+        // Connect "+ Add Subject" button in the empty state card to the modal
+        const openAddSubjectBtn = document.getElementById('openAddSubjectBtn');
+        if (openAddSubjectBtn) {
+            openAddSubjectBtn.addEventListener('click', openSubjectModal);
+        }
+
+        // Tab filter switching
+        const filterTabs = document.querySelectorAll('.filter-tab-btn');
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                filterTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
+
